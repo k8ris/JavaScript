@@ -125,18 +125,23 @@ console.log(sort(array2));
 
 
 function sort(array2){
-    for (var i = 0; i < array2.length; i++) {
+    newArray = [];
+    for (var i = 0; i < array2.length - 1; i++) {
         min = array2[i]
         for (var j = 1 + i; j < array2.length; j++) {
             if(min > array2[j]){
                 min = array2[j];
-                temp = array2[i];
-                array2[i] = min * 2;
-                array2[j] = temp;
+                index = j    
             }    
-        }   
+        } 
+        array2[index] = array2[i];
+        array2[i] = min;
+
     }
-return array2
+    for (var k = 0; k < array2.length; k++) {
+        newArray [k] = array2[k] * 2;
+    }
+return newArray;
 }
 
 
@@ -147,20 +152,30 @@ return array2
 
 
 
+var array2 = [ 13, 11, 15, 5, 6, 1, 8, 12 ];
+console.log(sort(array2));
+
+
 function sort(array2){
-    for (var i = 0; i < array2.length; i++) {
-        max = array2[i]
+    newArray = [];
+    for (var i = 0; i < array2.length - 1; i++) {
+       var max = array2[i]
         for (var j = 1 + i; j < array2.length; j++) {
             if(max < array2[j]){
                 max = array2[j];
-                temp = array2[i];
-                array2[i] = max;
-                array2[j] = temp;
+                index = j    
             }    
-        }   
+        } 
+        array2[index] = array2[i];
+        array2[i] = max;
+
     }
-return array2
+    for (var k = 0; k < array2.length; k++) {
+        newArray [k] = array2[k] * 2;
+    }
+return newArray;
 }
+
 
 
 
@@ -264,10 +279,10 @@ var br = 0
 // Output: true  | false
 
 
-console.log(isNumberPrime(2));
+console.log(isNumberPrime(15));
 
 function isNumberPrime(number){
-var br = 0;
+
     for (var i = 2; i < number/2 ; i++){
         
         if (number % i === 0 && number > 1){
