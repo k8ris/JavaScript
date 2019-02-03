@@ -94,7 +94,7 @@ function CulinaryRecipe(name, typeOfCuisine, complexity, ingredients, preparingT
             newArray[j] = this.ingredients[i];
             j++;
             }       
-        }=[1    ]
+        }
         this.ingredients = newArray;
         }
 

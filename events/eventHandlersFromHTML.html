@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body{
+            background-color: blueviolet;
+        }
+        .myStyle{
+            background-color: aquamarine;
+        }
+    </style>
+<title>Document</title>
+
+</head>
+<body id="body">
+    <button onclick = "bc()" id="turnOf">toggle Background</button>
+    <button onclick = 'turnOff()'>turn off</button>
+    <button onclick = "turnOn()">turn on</button>
+    
+    <script>
+        console.log(document.getElementsByTagName('body')[0].classList)
+        function bc() {
+            var elem = document.getElementsByTagName('body');
+            elem[0].classList.toggle('myStyle')
+        }
+        function turnOff() {
+            var elem = document.getElementById('turnOf');
+            elem.removeAttribute('onclick');
+            
+        }
+        function turnOn () {
+            var elem = document.getElementById('turnOf');
+            elem.setAttribute('onclick', 'bc()')
+            
+        }
+
+        
+    </script>
+</body>
+</html>

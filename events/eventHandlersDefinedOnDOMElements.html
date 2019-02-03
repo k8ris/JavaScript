@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        div{
+            width:50% ;
+            height:500px ;
+            border: solid 2px red;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+    <br>
+    <input type="text">
+    <button >send</button>
+    <script>
+      console.log(button)
+      function chat() {
+      var p = document.createElement('p');
+      var input = document.getElementsByTagName('input')[0];
+      console.log(input)
+      var inputText = input.value;
+      console.log(inputText);
+      var textNode = document.createTextNode(inputText)
+      p.appendChild(textNode);
+      var div = document.getElementById('box');
+      div.appendChild(p);
+      
+      };
+      var button = document.getElementsByTagName('button')[0];
+      button.onclick = chat;
+       
+
+    </script>
+</body>
+</html>

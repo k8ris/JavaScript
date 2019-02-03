@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>home</li>
+        <li>about</li>
+        <li>more</li>
+    </ul>
+    <script>
+        function showMessage() {
+            var text = document.getElementsByTagName('li')[0].textContent;
+            alert(text);
+        }
+        showMessage();
+        function changeNav(text) {
+            document.getElementsByTagName('li')[2].textContent = text;
+        }
+        changeNav('contact');
+    </script>
+</body>
+</html>

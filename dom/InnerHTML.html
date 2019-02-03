@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="first">
+
+    </div>
+    <div id="second">
+
+    </div>
+
+    <script>
+    function dropDownInnerHTML(arrayString,elementToPasteOn) {
+        var option = '';
+        for (var i = 0; i < arrayString.length; i++) {
+            option += '<option value="'+ arrayString[i] + '">' + arrayString[i] + '</option>';
+
+        }
+    elementToPasteOn.innerHTML = '<select>' + option + '</select>'
+  
+    }
+    
+    
+    function dropDownDMM(arrayString,elementToPasteOn) {
+        var dropdown = document.createElement('select');
+    
+        for (var i = 0; i < arrayString.length; i++) {
+              var option =  document.createElement('option');
+              var text = document.createTextNode(arrayString[i]);
+              option.appendChild(text);
+              dropdown.appendChild(option);
+              
+        }
+    elementToPasteOn.appendChild(dropdown);
+    }
+
+
+    var fElementToPasteOn = document.getElementById('first');
+    var sElementToPasteOn = document.getElementById('second');
+
+    var carArray = ['volvo','saab','opel'];  
+    var fruit = ['orange','lime','kiwi'];
+    // dropDownDMM(fruit,fElementToPasteOn);
+    // dropDownDMM(carArray,sElementToPasteOn);
+
+    dropDownInnerHTML(fruit,fElementToPasteOn);
+    dropDownInnerHTML(carArray,sElementToPasteOn);
+
+
+    </script>
+</body>
+</html>

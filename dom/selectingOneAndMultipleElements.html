@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .bgColor{
+            background-color: blue;
+        }
+        .bgColorAll{
+            background-color: red;
+        }
+        .bgColorLast{
+            background-color: yellow;
+            text-transform: uppercase;
+            
+        }
+    </style>
+
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>jagoda</li>
+            <li>lubenica</li>   
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>krompir</li>
+            <li class="bgColor">paradajz</li>
+        </ul>
+    </div>
+    <script>
+        function bgc() {
+            document.getElementsByTagName('ul')[1].className = 'bgColor'
+        }
+        // bgc();
+
+        function selectAllLi() {
+            for (var i =0; i < document.getElementsByTagName('li').length; i++){
+            document.getElementsByTagName('li')[i].className = 'bgColorAll'
+            }
+        }
+        // selectAllLi();
+        function lastUl() {
+           var a =  document.querySelectorAll('ul:last-of-type li')
+           for (var i = 0; i < a.length; i++) {
+               a[i].className = 'bgColorLast';
+           }
+        }
+        // lastUl();
+        function traversing() {
+            var beginFrom = document.querySelector('.bgColor');
+            var removeClass = beginFrom.classList.remove('bgColor');
+            console.log(beginFrom.parentElement.parentElement.previousElementSibling.firstElementChild.firstElementChild.className = 'bgColorAll');
+            // for(var i = 0; i < removeClass.length; i++ ) {
+            //     removeClass[i].classList.remove('bgColor');
+
+            // }
+            // console.log(document.documentElement.lastElementChild.children[1].firstElementChild.firstElementChild.className = 'bgColorAll');
+        }
+        // traversing();
+
+        
+    </script>
+</body>
+</html>
