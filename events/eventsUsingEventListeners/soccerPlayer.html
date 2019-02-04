@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body{
+            background-image: url("./field.png");
+            background-size: cover;
+            width: 2000px;
+            height: 1000px;
+        }
+        p{
+            background-color: aquamarine;
+            width: 20%;
+        }
+        #img{
+            width: 10%;
+            position: absolute;
+        
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <p>click on the football pitch to move player </p>
+    <p>click on stop button to stop movement</p>
+    <img src="./player.png" id="img">
+    <button id="button">stop</button>
+
+    <script>
+        var body= document.querySelector('body');
+        // console.log(body);
+        var player = document.querySelector('#img');
+        var button = document.querySelector('#button');
+        
+        function move(event) {
+            var x = event.clientX;
+            var y = event.clientY;
+            console.log(x);
+            console.log(y);
+            player.style.top = y + 'px';
+            player.style.left = x + 'px';
+        }
+        function stopMove() {
+            body.removeEventListener('click', move);    
+        }
+        body.addEventListener('click', move);
+        button.addEventListener('click', stopMove);
+
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body{
+            background-image: url("./bg.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-repeat: repeat-x;
+            height: 750px;
+            
+        
+        }
+        #marioStatic{
+            position: absolute; 
+            bottom: 0px;  
+        }
+        #marioRunning{
+            display: none;
+            position: absolute;
+            bottom: 0px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <img src="./mario.png" id="marioStatic" alt="mario static">
+    <img src="./mario_running.gif" id="marioRunning" alt="mario_running">
+    <script>
+    var marioRunning = document.querySelector('#marioRunning');
+    var body = document.querySelector('body');
+    console.log(body);
+    function showMarioRunning(e) {
+        if(e.keyCode == '39'){
+        marioRunning.style.display = 'unset';
+        };
+    } 
+    body.addEventListener('keydown',showMarioRunning);
+    body.addEventListener('keyup',function() {
+        marioRunning.style.display = 'none';
+
+    })
+    
+    </script>
+</body>
+</html>
