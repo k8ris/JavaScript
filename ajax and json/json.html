@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>intro</title>
+</head>
+<body>
+
+    <input id="domen" type="text">
+    <input id="send" type="button" value="send">
+<!-- include jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!-- include extern js script -->
+<script>
+    $(function(){
+        console.log('hello');
+
+        $('input#send').on('click',function(){
+        
+        var domen = $('input#domen').val();
+        
+        var request = new XMLHttpRequest();
+        request.open('GET','http://api.ipstack.com/'+domen+'?format=1&access_key=66f0403b5870e87ee670adb5fa81c3a6');
+        request.onload = function () {
+            var data =JSON.parse(request.responseText);
+            var countryName = data.country_name
+            //show request on the page
+            var p = $("<p>");
+            p.text(countryName);
+            $('body').append(p);
+        }
+        request.send(); 
+        })
+    })
+    
+</script>  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

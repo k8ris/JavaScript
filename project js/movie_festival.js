@@ -96,7 +96,7 @@
     var vice = createMovie('vice', 'comedy', 110);
     var wonderWoman = createMovie('wonder woman', 'action', 120);
     var nightSchool = createMovie('night school', 'comedy', 90);
-
+    console.log(aquaMan.getData())
     actionProgram.addMovie(aquaMan);
     actionProgram.addMovie(vice);
     comedyProgram.addMovie(wonderWoman);

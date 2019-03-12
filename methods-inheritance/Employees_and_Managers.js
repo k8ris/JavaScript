@@ -52,7 +52,7 @@ function Manager(name, surname, job, salary, department) {
 Manager.prototype = Object.create(Employee.prototype);
 Manager.prototype.constructor = Manager;
 // Manager.prototype.constructor = Manager;
-// console.log(Manager.prototype)
+console.log(Manager.prototype.constructor)
 
 Manager.prototype.getDepartment = function() {
     console.log(this.department);
