@@ -7,7 +7,6 @@ Person.prototype.getFullName = function () {
 };
 
 //Person test
-
 var kris = new Person('kris' , 'rai');
 
 function Employee(name, surname, job, salary) {
@@ -45,13 +44,10 @@ function Manager(name, surname, job, salary, department) {
     Employee.call(this, name, surname, job, salary);
     this.department = department;
 };
-// console.log(Employee.prototype)
 
 //Manager inherits from Employee
-// console.log(Manager.prototype)
 Manager.prototype = Object.create(Employee.prototype);
 Manager.prototype.constructor = Manager;
-// Manager.prototype.constructor = Manager;
 console.log(Manager.prototype.constructor)
 
 Manager.prototype.getDepartment = function() {
@@ -69,16 +65,7 @@ Manager.prototype.changeDepartment = function(newDepartment) {
 
 // Manager test
 var koja = new Manager('Koja', 'Kojic', 'manager', 1000, 'D1');
-// console.log(koja);
-
-//tests
-// mara.getSalary();
-// mara.increaseSalary();
-// mara.getSalary();
-// var maraData = mara.getData();
-// console.log(maraData);
-
-// pera.getSpecialization();
+//  console.log(koja)
 
 koja.changeDepartment('D3');
 var kojaData = koja.getData();
